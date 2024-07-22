@@ -1,0 +1,365 @@
+<html><head><base href="https://career-coach.co.il"><meta charset="utf-8"><title>טופס הכנה לייעוץ קריירה</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --text-color: #34495e;
+  --background-color: #ecf0f1;
+  --form-bg-color: #f9f9f9;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.8;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  padding: 4em 2em;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+  animation: ripple 15s infinite linear;
+  z-index: 1;
+}
+
+@keyframes ripple {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 2;
+}
+
+main {
+  max-width: 800px;
+  margin: 3em auto;
+  padding: 2.5em;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 48%, var(--secondary-color) 48%, var(--secondary-color) 52%, transparent 52%);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 2em;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+form {
+  background-color: var(--form-bg-color);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+label {
+  display: block;
+  margin-top: 1.2em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+  outline: none;
+  transform: scale(1.02);
+}
+
+.submit-button {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 1em 2em;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-top: 2em;
+  width: 100%;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.submit-button::after {
+  content: '🚀';
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.submit-button:hover::after {
+  left: 20px;
+  opacity: 1;
+}
+
+.required::after {
+  content: " *";
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+.radio-option {
+  flex-basis: 30%;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.radio-option input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.radio-option label {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"]:checked + label {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.form-section {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px dashed #ccc;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 2em auto;
+  display: block;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.social-links {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--primary-color);
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .radio-option {
+    flex-basis: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<header class="animate__animated animate__fadeIn">
+  <h1 class="animate__animated animate__bounceInDown">טופס הכנה לייעוץ קריירה</h1>
+  <p class="animate__animated animate__fadeIn animate__delay-1s">צעד ראשון לקראת עתיד מקצועי מבטיח</p>
+</header>
+<main class="animate__animated animate__fadeInUp">
+  <h2>ברוכים הבאים למסע הקריירה שלכם!</h2>
+  <p>אנו מתרגשים ללוות אתכם בדרככם המקצועית. מילוי הטופס יסייע לנו להתאים את הייעוץ בדיוק לצרכים שלכם.</p>
+  
+  <img src="https://media.licdn.com/dms/image/D4E03AQGM4c-j6IU7Gg/profile-displayphoto-shrink_800_800/0/1716305096018?e=1727308800&v=beta&t=ZfekeNIXbbIBJXaK-A0huYTfAH6LNWcBkQU8rSKHWK8" alt="תמונת פרופיל יועצת קריירה" class="profile-picture animate__animated animate__fadeIn">
+  
+  <div class="social-links animate__animated animate__fadeIn animate__delay-1s">
+    <a href="https://www.linkedin.com/in/shany-shechter-58b2a182/" target="_blank" title="LinkedIn Profile">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://wa.me/972525822245" target="_blank" title="WhatsApp Contact">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <form id="careerForm" class="animate__animated animate__fadeIn animate__delay-1s">
+    <div class="form-section">
+      <h3>פרטים אישיים</h3>
+      <label for="name" class="required">שם מלא:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email" class="required">כתובת אימייל:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="phone" class="required">מספר טלפון:</label>
+      <input type="tel" id="phone" name="phone" required>
+      
+      <label for="age">גיל:</label>
+      <input type="number" id="age" name="age" min="18" max="120">
+    </div>
+    
+    <div class="form-section">
+      <h3>רקע מקצועי</h3>
+      <label for="education" class="required">השכלה (התואר הגבוה ביותר):</label>
+      <select id="education" name="education" required>
+        <option value="">בחר/י אפשרות</option>
+        <option value="high-school">תיכונית</option>
+        <option value="vocational">הכשרה מקצועית</option>
+        <option value="bachelor">תואר ראשון</option>
+        <option value="master">תואר שני</option>
+        <option value="phd">דוקטורט</option>
+      </select>
+      
+      <label for="current-job">תפקיד נוכחי:</label>
+      <input type="text" id="current-job" name="current-job">
+      
+      <label for="experience">שנות ניסיון בתחום הנוכחי:</label>
+      <input type="number" id="experience" name="experience" min="0" max="50">
+      
+      <label class="required">מצב תעסוקתי נוכחי:</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="employed" name="employment-status" value="employed" required>
+          <label for="employed">מועסק/ת</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="unemployed" name="employment-status" value="unemployed">
+          <label for="unemployed">מחפש/ת עבודה</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="student" name="employment-status" value="student">
+          <label for="student">סטודנט/ית</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h3>מיומנויות ומטרות</h3>
+      <label for="skills">מיומנויות עיקריות:</label>
+      <textarea id="skills" name="skills" rows="3" placeholder="לדוגמה: ניהול פרויקטים, תכנות Python, כתיבה שיווקית..."></textarea>
+      
+      <label for="career-goals" class="required">מהן המטרות הקריירה שלך לטווח הקרוב?</label>
+      <textarea id="career-goals" name="career-goals" rows="3" required placeholder="לדוגמה: למצוא תפקיד ניהולי בתחום ההייטק, להחליף קריירה לתחום החינוך..."></textarea>
+    </div>
+    
+    <div class="form-section">
+      <h3>אתגרים וציפיות</h3>
+      <label for="challenges" class="required">מהם האתגרים העיקריים שאתה מתמודד איתם בחיפוש עבודה או בקידום הקריירה?</label>
+      <textarea id="challenges" name="challenges" rows="3" required placeholder="לדוגמה: קושי במציאת משרות מתאימות, חוסר ביטחון בראיונות עבודה..."></textarea>
+      
+      <label for="expectations">מה הציפיות שלך מפגישת הייעוץ?</label>
+      <textarea id="expectations" name="expectations" rows="3" placeholder="לדוגמה: לקבל כלים מעשיים לשיפור קורות החיים, להבין איך להתקדם בתחום שלי..."></textarea>
+    </div>
+    
+    <a href="https://wa.me/972525822245" class="submit-button animate__animated animate__pulse animate__infinite">סיימתי, בואי נצא לדרך!</a>
+  </form>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+new WOW().init();
+
+document.querySelectorAll('input, textarea, select').forEach(element => {
+  element.addEventListener('focus', function() {
+    this.classList.add('animate__animated', 'animate__pulse');
+  });
+  element.addEventListener('blur', function() {
+    this.classList.remove('animate__animated', 'animate__pulse');
+  });
+});
+
+document.getElementById('careerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  window.location.href = "https://wa.me/972525822245";
+});
+</script>
+</body>
+</html>
